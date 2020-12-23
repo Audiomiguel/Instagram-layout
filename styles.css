@@ -1,0 +1,268 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: Proxim;
+}
+header{
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #efefef;
+    border-bottom: 2px solid #efefef;
+    width: auto;
+    max-width: 1000px;
+    margin: auto;
+    height: 55px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top:15px;
+    font-family: 'Roboto',sans-serif; 
+}
+
+main{
+    background-color: rgb(250,250,250);
+
+}
+.instagram-logo{
+    width: 100px;
+    height: 30px;
+}
+.search-container{
+    display: flex;
+    border: 2px solid #efefef;
+    border-radius: 2px;
+    text-align: center;
+    width: 200px;
+    height: 28px;
+    font-size: 1.3rem;
+    background-color: rgb(250,250,250);
+    color: rgb(164, 164, 164);
+    font-weight: 300;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;   
+}
+header ul{
+    display: flex;
+}
+.options-container{
+    display: flex;
+}
+.icon-option{
+    margin: 0 10px;
+    width: 22px;
+    height: 21px;
+}
+.icon-option:nth-of-type(5){
+    border-radius: 50%;
+    border: 1px solid #efefef   ;
+}
+.profile-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+}
+.profile-grid{
+    display: grid;
+    grid-template-columns:minmax(150px,230px) minmax(auto,700px);
+    grid-template-rows: repeat(2,30px) auto 30px auto;
+    row-gap: 12px;
+}
+.profile-grid div{
+    display: flex;
+}
+.profile-grid .photo{
+    
+    padding-left: 20px;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.profile-grid .photo img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: white;
+    border: 3px solid rgb(192, 187, 187);
+    object-fit: cover;
+}
+.profile-grid .name-buttons{
+    align-items: left;
+}
+.profile-grid .name-buttons button{
+    display: flex;
+    margin-right: 10px;
+    font-weight:600;
+    padding: 0 5px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #efefef   ;
+    background-color: rgb(250,250,250);
+}
+.user-check{
+    width: 50px;
+}
+.profile-grid .user-check img{
+    width: 30px;
+}
+.profile-grid .name-buttons p{
+    font-size: 2.4rem;
+    margin-right: 18px;
+}
+.profile-grid .name-buttons .arrow{
+    width: 28px;
+}
+.profile-grid .post-information{
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+}
+.post-information p { 
+    margin-right: 30px;
+}
+.profile-grid .summary-profile{
+    display: flex;
+}
+.profile-grid .name-buttons .arrow{
+    width: 30px;
+}
+.arrow img{
+    width: 8px;
+}
+.three-points img{
+    width: 20px;
+}
+.profile-container .profile-grid .summary-profile{
+    font-size: 1.4rem;
+    display: block;
+    line-height: 20px;
+}
+.profile-container .profile-grid .followers-container{
+    display: flex;
+    align-items: center;
+}
+.profile-container .profile-grid .followers-container p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(145, 141, 141);
+}
+.profile-container .profile-grid .followers-container b{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+}
+.stories-container
+{
+    margin: 0 auto;
+    padding-top: 40px;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    overflow-x: auto;
+}
+.stories-container .stories-body{
+    display: block;
+    text-align: center;
+    margin-right: 35px;
+    font-size: 1.6rem;
+}
+.stories-container .stories-body img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border:1px solid rgb(145, 141, 141);
+    padding: 2.5px;
+    background-color: white;
+    object-fit: cover ;
+}
+.stories-container .stories-body img:hover{
+    cursor: pointer;}
+.stories-container .stories-body p{
+    font-size: 1.4rem;
+}
+.instagram-container{
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns:repeat(3,minmax(auto,293px));
+    grid-template-rows: auto minmax(auto,293px);
+    grid-auto-rows: minmax(auto,293px);
+    row-gap: 25px;
+    column-gap: 25px;
+}
+.instagram-container .image-footer{
+    border-top: 1px solid rgb(201, 195, 195);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    grid-column-start: 1 ;
+    grid-column-end: 4;
+}
+.instagram-container .image-footer div{
+    display: flex;
+    padding-top: 15px;
+    margin-right: 50px; 
+    font-size: 1.2rem;
+    font-family: 'Roboto',sans-serif; 
+    align-items: center;
+    font-weight: 300;
+    text-align: center;
+}
+.instagram-container .image-footer a{
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+}
+.image-footer div img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.image-footer .tag-icon{
+    width: 20px;
+    height: 20px;
+}
+.instagram-container .ancla-post{
+    cursor: pointer;
+    position: relative; 
+    display: block;
+    width: 100%;
+}
+.img-photo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.instagram-container .hover-img{
+    background: rgba(0,0,0, .4);
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	color: white;
+    text-align: center;
+    
+    font-size: 2.2rem;
+}
+.ancla-post:hover  .hover-img{
+    display: flex;
+}
+.hover-img .icon-heart::before  {
+    content: '♥ ';
+}
+.hover-img .icon-heart::after  {
+    content: ' ♥';
+}
