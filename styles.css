@@ -68,10 +68,16 @@ header ul{
     font-family: 'Roboto',sans-serif;
     font-weight: 300;
 }
+/*GRID PROFILE*/
 .profile-grid{
     display: grid;
     grid-template-columns:minmax(150px,230px) minmax(auto,700px);
-    grid-template-rows: repeat(2,30px) auto 30px auto;
+    grid-template-rows: 30px auto auto 30px auto;
+    grid-template-areas: "photo  user-bottom"
+                         "photo  second-line"
+                         "photo  description"
+                         "photo  followers-line"
+                         "h-post h-post";   
     row-gap: 12px;
 }
 .profile-grid div{
@@ -80,8 +86,7 @@ header ul{
 .profile-grid .photo{
     
     padding-left: 20px;
-    grid-row-start: 1;
-    grid-row-end: 5;
+    grid-area: photo;
 }
 .profile-grid .photo img{
     width: 140px;
@@ -93,7 +98,11 @@ header ul{
     object-fit: cover;
 }
 .profile-grid .name-buttons{
-    align-items: left;
+    grid-area: user-bottom;
+    display: flex;
+}
+.profile-grid .name-buttons div{
+    height: 30px;
 }
 .profile-grid .name-buttons button{
     display: flex;
@@ -119,14 +128,19 @@ header ul{
     width: 28px;
 }
 .profile-grid .post-information{
+    grid-area: second-line;
     display: flex;
     font-size: 1.5rem;
     align-items: center;
+}
+.post-information b { 
+    margin-right: 5px;
 }
 .post-information p { 
     margin-right: 30px;
 }
 .profile-grid .summary-profile{
+    grid-area: description;
     display: flex;
 }
 .profile-grid .name-buttons .arrow{
@@ -144,6 +158,7 @@ header ul{
     line-height: 20px;
 }
 .profile-container .profile-grid .followers-container{
+    grid-area: followers-line;
     display: flex;
     align-items: center;
 }
@@ -159,6 +174,7 @@ header ul{
 }
 .stories-container
 {
+    grid-area: h-post;
     margin: 0 auto;
     padding-top: 40px;
     grid-column-start: 1;
@@ -193,8 +209,7 @@ header ul{
     display: grid;
     justify-content: center;
     grid-template-columns:repeat(3,minmax(auto,293px));
-    grid-template-rows: auto minmax(auto,293px);
-    grid-auto-rows: minmax(auto,293px);
+    grid-template-rows: auto ;
     row-gap: 25px;
     column-gap: 25px;
 }
@@ -266,3 +281,131 @@ header ul{
 .hover-img .icon-heart::after  {
     content: ' ♥';
 }
+
+/*740 */
+@media (max-width: 740px)
+{
+    header .search-container{
+        /*display: none;*/
+    }
+    .profile-container{
+    
+    justify-content: left;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    }
+    .profile-grid
+    {
+        /*grid-template-columns:90px auto;*/
+        grid-template-columns: 20vw 80vw;
+        grid-template-rows: auto auto;
+        grid-template-areas: "photo  user-bottom"
+                             "description  description"
+                             "followers-line  followers-line"
+                             "h-post h-post"
+                             "second-line second-line";
+                             
+        row-gap: 12px;
+    }
+    .profile-grid .photo{
+        padding-left: 8px;
+        width: 100px;
+        height: auto;
+    }
+
+    
+    .profile-grid .photo img{
+        width: 80px;
+        height: 80px;
+        padding: 2px;
+        border: 2px solid rgb(192, 187, 187);;
+    }
+    .profile-grid .summary-profile
+    {
+        padding-left: 13px;
+    }
+    .profile-grid .followers-container
+    {
+        padding-left: 13px;
+    }
+    .stories-container
+    {
+        padding-top: 10px;
+        padding-left: 10px;
+        margin: 0 0;
+        padding-bottom: 17px;
+        border-bottom: 1px solid rgb(201, 195, 195);
+
+    }
+    .profile-grid .name-buttons{
+        grid-area: user-bottom;
+        display: block;
+        padding-left: 10px;
+
+    }
+    .profile-grid .name-buttons div:nth-of-type(1){
+        margin-bottom: 9px;
+    }
+    .profile-grid .name-buttons div:nth-of-type(2){
+        padding-left: 15px;
+    }
+    .stories-container .stories-body{
+        margin-right: 10px;
+
+    }
+    .stories-container .stories-body img{
+        width: 60px;
+        height: 60px;
+
+    }
+
+    .profile-grid .post-information{
+        grid-area: second-line;
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        color: rgb(145, 141, 141)
+    }
+    .profile-grid .post-information div{
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+    .profile-grid .post-information div b{
+        color: black;
+    }
+    .profile-grid .post-information p{
+        margin-right: 0;
+    }
+
+
+    .instagram-container{
+
+        display: grid;
+        justify-content: center;
+        grid-template-columns:repeat(3,minmax(auto,293px));
+        grid-template-rows: auto ;
+        row-gap: 3px;
+        column-gap: 3px;
+    }
+
+    .instagram-container .image-footer div{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 400px)
+{
+    header .search-container{
+        display: none;
+    }
+    header .options-container{
+        margin-left: auto;
+    }
+    .profile-grid{
+        grid-template-columns: 25vw 75vw;
+
+    }
